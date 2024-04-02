@@ -2,6 +2,8 @@
 
 This project was scaffolded with [zksync-cli](https://github.com/matter-labs/zksync-cli).
 
+**Deploy and verify vyper contracts to zkSync Era.**
+
 ## Project Layout
 
 - `/contracts`: Contains solidity smart contracts.
@@ -11,9 +13,9 @@ This project was scaffolded with [zksync-cli](https://github.com/matter-labs/zks
 
 ## Deployment caching
 
-Notice both `zkSyncSepoliaTestnet` and `zkSyncMainnet` networks in the `hardhat.config.ts` file have the `forceDeploy: false` setting. This will check if the contract to be deployed was deployed previously by checking the information in the `deployments-zk` folder. If the contract was deployed previously, it'll skip the deployment (although it will not skip the verification).
+Notice both `zkSyncSepoliaTestnet` and `zkSyncMainnet` networks in the `hardhat.config.ts` file have the `forceDeploy: false` setting. 
 
-
+This will check if the contract to be deployed was deployed previously by checking the information in the `deployments-zk` folder. If the contract was deployed previously, it'll skip the deployment (although it will not skip the verification).
 
 ## How to Use
 
@@ -23,7 +25,9 @@ Notice both `zkSyncSepoliaTestnet` and `zkSyncMainnet` networks in the `hardhat.
 - `npm run interact`: Interacts with the deployed contract using `/deploy/interact.ts`.
 - `npm run test`: Tests the contracts.
 
-Note: Both `npm run deploy` and `npm run interact` are set in the `package.json`. You can also run your files directly, for example: `npx hardhat deploy-zksync --script deploy.ts`
+**Note:** Both `npm run deploy` and `npm run interact` are set in the `package.json`. You can also run your files directly, for example: `npx hardhat deploy-zksync --script deploy-single.ts`
+
+**Note 2:** The default target network is `zkSyncSepoliaTestnet` (as defined in `hardhat.config.ts`). To target other networks, change the `defaultNetwork` or use the --network flag (e.g. `npx hardhat deploy-zksync --script deploy-single.ts --network zkSyncMainnet`)
 
 
 ### Environment Settings
