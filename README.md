@@ -9,18 +9,21 @@ This project was scaffolded with [zksync-cli](https://github.com/matter-labs/zks
 - `/test`: Test files.
 - `hardhat.config.ts`: Configuration settings.
 
+## Deployment caching
+
+Notice both `zkSyncSepoliaTestnet` and `zkSyncMainnet` networks in the `hardhat.config.ts` file have the `forceDeploy: false` setting. This will check if the contract to be deployed was deployed previously by checking the information in the `deployments-zk` folder. If the contract was deployed previously, it'll skip the deployment (although it will not skip the verification).
+
+
+
 ## How to Use
 
 - `npm run compile`: Compiles contracts.
-- `npm run deploy`: Deploys using script `/deploy/deploy.ts`.
+- `npm run deploy:single`: Deploys and verifies a single contract using script `/deploy/deploy-single.ts`.
+- `npm run deploy:batch`: Deploys and verifies a batch of contracts using script `/deploy/deploy-batch.ts`.
 - `npm run interact`: Interacts with the deployed contract using `/deploy/interact.ts`.
 - `npm run test`: Tests the contracts.
 
 Note: Both `npm run deploy` and `npm run interact` are set in the `package.json`. You can also run your files directly, for example: `npx hardhat deploy-zksync --script deploy.ts`
-
-## Deployment caching
-
-Notice both `zkSyncSepoliaTestnet` and `zkSyncMainnet` networks in the `hardhat.config.ts` file have the `forceDeploy: false` setting. This will check if the contract to be deployed was deployed previously by checking the information in the `deployments-zk` folder. If the contract was deployed previously, it'll skip the deployment (although it will not skip the verification).
 
 
 ### Environment Settings

@@ -6,7 +6,8 @@
   "license": "MIT",
   "repository": "https://github.com/matter-labs/zksync-hardhat-template.git",
   "scripts": {
-    "deploy": "hardhat deploy-zksync --script deploy.ts",
+    "deploy:batch": "hardhat deploy-zksync --script deploy-batch.ts",
+    "deploy:single": "hardhat deploy-zksync --script deploy-single.ts",
     "interact": "hardhat deploy-zksync --script interact.ts",
     "compile": "hardhat compile",
     "clean": "hardhat clean",
